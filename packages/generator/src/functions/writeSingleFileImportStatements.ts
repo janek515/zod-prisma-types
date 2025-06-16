@@ -8,7 +8,7 @@ export const writeSingleFileImportStatements: WriteStatements = (
   dmmf,
   { writer, writeImport },
 ) => {
-  const { prismaClientPath, decimalJSInstalled } = dmmf.generatorConfig;
+  const { prismaClientPath, decimalJSInstalled, createInputTypes } = dmmf.generatorConfig;
   writeImport('{ z }', 'zod/v4');
 
   // Prisma should primarily be imported as a type, but if there are json fields,
@@ -17,7 +17,7 @@ export const writeSingleFileImportStatements: WriteStatements = (
 
   if (dmmf.schema.hasJsonTypes || dmmf.schema.hasDecimalTypes) {
     writeImport(`{ Prisma }`, `${prismaClientPath}`);
-  } else {
+  } else if (createInputTypes) {
     writeImport(`type { Prisma }`, `${prismaClientPath}`);
   }
 

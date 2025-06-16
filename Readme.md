@@ -706,7 +706,7 @@ These schemas further validate the input and throw an error if the input is not 
 
 import { Prisma } from '@prisma/client'; // can't be imported as type because of "instance of Prisma.Decimal" check
 import Decimal from 'decimal.js'; // gets added if installed
-import { z } from 'zod';
+import { z } from 'zod/v4';
 import { isValidDecimalInput } from './isValidDecimalInput';
 import { DecimalJSLikeSchema } from './DecimalJsLikeSchema';
 
@@ -835,7 +835,7 @@ model MyPrismaScalarsType {
 This example generates the following zod schema for the model in `prisma/zod/index.ts`:
 
 ```ts
-import { z } from 'zod';
+import { z } from 'zod/v4';
 import * as PrismaClient from '@prisma/client';
 import validator from 'validator';
 import { myFunction } from 'mypackage';

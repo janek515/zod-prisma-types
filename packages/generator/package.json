@@ -51,7 +51,7 @@
     "@prisma/generator-helper": "^6.6.0",
     "code-block-writer": "^13.0.3",
     "lodash": "^4.17.21",
-    "zod": "4.0.0-beta.20250410T041907"
+    "zod": "^3.25.57"
   },
   "peerDependencies": {
     "@prisma/client": "^4.x.x || ^5.x.x || ^6.x.x",

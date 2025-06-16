@@ -188,10 +188,14 @@ export class ExtendedDMMFSchemaField
   }
 
   private _setArgTypeImports() {
-    const { prismaClientPath } = this.generatorConfig;
+    const { prismaClientPath, createInputTypes } = this.generatorConfig;
     const prismaImport = `import type { Prisma } from '${prismaClientPath}';`;
 
-    const imports: string[] = ["import { z } from 'zod';", prismaImport];
+    const imports: string[] = ["import { z } from 'zod/v4';"];
+
+    if (createInputTypes) {
+      imports.push(prismaImport);
+    }
 
     if (this.writeIncludeArg) {
       const modelTypeName =

@@ -33,8 +33,8 @@ importers:
         specifier: ^4.x.x || ^5.x.x || ^6.x.x
         version: 6.3.0(typescript@5.8.3)
       zod:
-        specifier: 4.0.0-beta.20250410T041907
-        version: 4.0.0-beta.20250410T041907
+        specifier: ^3.25.57
+        version: 3.25.64
     devDependencies:
       '@prisma/internals':
         specifier: ^6.6.0
@@ -2044,6 +2044,9 @@ packages:
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+
+  zod@3.25.64:
+    resolution: {integrity: sha512-hbP9FpSZf7pkS7hRVUrOjhwKJNyampPgtXKc3AN6DsWtoHsg2Sb4SQaS4Tcay380zSwd2VPo9G9180emBACp5g==}
 
   zod@4.0.0-beta.20250410T041907:
     resolution: {integrity: sha512-08UlLohDxklYh52NmT/j1R2BoppnHvXZJC2DHSogtTwHQM2VOunOxLkqCdGZ8DTk5dhT4Kyvc3RtvXKoRYWQIQ==}
@@ -4182,6 +4185,8 @@ snapshots:
   yn@3.1.1: {}
 
   yocto-queue@0.1.0: {}
+
+  zod@3.25.64: {}
 
   zod@4.0.0-beta.20250410T041907:
     dependencies:

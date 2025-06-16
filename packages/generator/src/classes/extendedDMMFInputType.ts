@@ -182,7 +182,7 @@ export class ExtendedDMMFInputType
   }
 
   private _setImports() {
-    const { prismaClientPath, decimalJSInstalled } = this.generatorConfig;
+    const { prismaClientPath, decimalJSInstalled, createInputTypes } = this.generatorConfig;
     const prismaImport = this.isDecimalField
       ? `import { Prisma } from '${prismaClientPath}';`
       : `import type { Prisma } from '${prismaClientPath}';`;
@@ -193,7 +193,7 @@ export class ExtendedDMMFInputType
     const zodImport = "import { z } from 'zod/v4';";
 
     const fieldImports = [
-      prismaImport,
+      createInputTypes ? prismaImport: '',
       decimalJSImport,
       zodImport,
       ...this.fields.map((field) => field.getImports(this.name)).flat(),
